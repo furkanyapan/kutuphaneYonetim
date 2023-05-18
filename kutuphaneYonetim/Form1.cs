@@ -6,7 +6,6 @@ namespace kutuphaneYonetim
     {
         SqlConnection con = new SqlConnection(@"Data Source=MSI\SQLEXPRESS;Initial Catalog=kutuphane;Integrated Security=True");
         SqlCommand cmd;
-        public static string isim;
         public Form1()
         {
             InitializeComponent();
@@ -37,7 +36,7 @@ namespace kutuphaneYonetim
                     if (dr[3].ToString().Trim() == textBox1.Text && dr[4].ToString().Trim() == textBox2.Text)
                     {
                         sonuc = true;
-                        MessageBox.Show("Giriþ Baþarýlý ", "Giriþ Ekraný");
+                        //MessageBox.Show("Giriþ Baþarýlý ", "Giriþ Ekraný");
                         break;
                     }
                 }
