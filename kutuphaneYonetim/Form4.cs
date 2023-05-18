@@ -128,7 +128,7 @@ namespace kutuphaneYonetim
 
         private void textBox10_TextChanged(object sender, EventArgs e)  // Arama
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Uye WHERE uye_ad LIKE '" + textBox10.Text + "%'    ", con);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT u.uye_id, u.uye_ad, u.uye_soyad, u.uye_mail, a.adres_id, a.il, a.ilce, a.mahalle, a.sokak, a.bina, a.kapi FROM Uye U JOIN Adres A ON U.adres_id = A.adres_id WHERE U.uye_ad LIKE '" + textBox10.Text + "%';    ", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
