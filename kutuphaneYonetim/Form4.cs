@@ -40,13 +40,6 @@ namespace kutuphaneYonetim
             InitializeComponent();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Form3 anaMenu = new Form3();
-            this.Hide();
-            anaMenu.Show();
-        }
-
         private void button4_Click(object sender, EventArgs e) //Temizle Butonu
         {
             Temizle();
@@ -112,7 +105,7 @@ namespace kutuphaneYonetim
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e) //Silme
         {
             try
             {
@@ -131,6 +124,22 @@ namespace kutuphaneYonetim
                 Listele();
                 con.Close();
             }
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)  // Arama
+        {
+            SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Uye WHERE uye_ad LIKE '" + textBox10.Text + "%'    ", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+            Temizle();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e) // Geri Git, Ana Menuye don
+        {
+            Form3 anaMenu = new Form3();
+            this.Hide();
+            anaMenu.Show();
         }
     }
 }

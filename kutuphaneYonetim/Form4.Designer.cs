@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            linkLabel1 = new LinkLabel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -55,19 +55,11 @@
             textBox10 = new TextBox();
             label11 = new Label();
             button4 = new Button();
+            pictureBox1 = new PictureBox();
+            label12 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(12, 824);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(123, 20);
-            linkLabel1.TabIndex = 0;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Ana Menüye Dön";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // label1
             // 
@@ -291,6 +283,7 @@
             textBox10.Name = "textBox10";
             textBox10.Size = new Size(156, 27);
             textBox10.TabIndex = 25;
+            textBox10.TextChanged += textBox10_TextChanged;
             // 
             // label11
             // 
@@ -314,12 +307,36 @@
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Cursor = Cursors.Hand;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(37, 34);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(116, 78);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 28;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Lucida Calligraphy", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label12.Location = new Point(1213, 824);
+            label12.Name = "label12";
+            label12.Size = new Size(257, 20);
+            label12.TabIndex = 29;
+            label12.Text = "Written by Furkan YAPAN";
+            // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Aqua;
             ClientSize = new Size(1482, 853);
+            Controls.Add(label12);
+            Controls.Add(pictureBox1);
             Controls.Add(button4);
             Controls.Add(label11);
             Controls.Add(textBox10);
@@ -346,19 +363,17 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(linkLabel1);
             Name = "Form4";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Üye İşlemleri";
             Load += Form4_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private LinkLabel linkLabel1;
         private Label label1;
         private Label label2;
         private Label label3;
@@ -385,5 +400,7 @@
         private TextBox textBox10;
         private Label label11;
         private Button button4;
+        private PictureBox pictureBox1;
+        private Label label12;
     }
 }

@@ -37,6 +37,7 @@
             button1 = new Button();
             linkLabel1 = new LinkLabel();
             pictureBox1 = new PictureBox();
+            label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -46,7 +47,7 @@
             label1.BackColor = Color.Aqua;
             label1.Font = new Font("Showcard Gothic", 15F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.DarkViolet;
-            label1.Location = new Point(176, 123);
+            label1.Location = new Point(475, 119);
             label1.Name = "label1";
             label1.Size = new Size(544, 31);
             label1.TabIndex = 0;
@@ -56,7 +57,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(229, 517);
+            label2.Location = new Point(510, 507);
             label2.Name = "label2";
             label2.Size = new Size(117, 25);
             label2.TabIndex = 1;
@@ -67,7 +68,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(277, 592);
+            label3.Location = new Point(558, 582);
             label3.Name = "label3";
             label3.Size = new Size(69, 25);
             label3.TabIndex = 2;
@@ -75,14 +76,14 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(377, 519);
+            textBox1.Location = new Point(658, 509);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(258, 27);
             textBox1.TabIndex = 3;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(377, 593);
+            textBox2.Location = new Point(658, 583);
             textBox2.Name = "textBox2";
             textBox2.PasswordChar = '*';
             textBox2.Size = new Size(258, 27);
@@ -91,7 +92,7 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(521, 653);
+            button1.Location = new Point(802, 643);
             button1.Name = "button1";
             button1.Size = new Size(114, 45);
             button1.TabIndex = 5;
@@ -103,7 +104,7 @@
             // 
             linkLabel1.AutoSize = true;
             linkLabel1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            linkLabel1.Location = new Point(377, 669);
+            linkLabel1.Location = new Point(658, 659);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(134, 20);
             linkLabel1.TabIndex = 6;
@@ -114,19 +115,30 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(314, 219);
+            pictureBox1.Location = new Point(595, 209);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(293, 220);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 7;
             pictureBox1.TabStop = false;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Lucida Calligraphy", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(1213, 824);
+            label7.Name = "label7";
+            label7.Size = new Size(257, 20);
+            label7.TabIndex = 19;
+            label7.Text = "Written by Furkan YAPAN";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Aqua;
-            ClientSize = new Size(882, 853);
+            ClientSize = new Size(1482, 853);
+            Controls.Add(label7);
             Controls.Add(pictureBox1);
             Controls.Add(linkLabel1);
             Controls.Add(button1);
@@ -153,5 +165,6 @@
         private Button button1;
         private LinkLabel linkLabel1;
         private PictureBox pictureBox1;
+        private Label label7;
     }
 }
