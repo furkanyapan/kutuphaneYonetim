@@ -64,7 +64,7 @@ namespace kutuphaneYonetim
                 con.Open();
                 cmd = new SqlCommand("INSERT INTO Adres (il, ilce, mahalle, sokak, bina, kapi) values ('" + textBox4.Text + "', '" + textBox5.Text + "', '" + textBox6.Text + "', '" + textBox7.Text + "', '" + int.Parse(textBox8.Text) + "', '" + int.Parse(textBox9.Text) + "'); DECLARE @adres_id int; SET @adres_id = SCOPE_IDENTITY(); INSERT INTO Uye (uye_ad, uye_soyad, uye_mail, adres_id) VALUES ('" + textBox1.Text + "', '" + textBox2.Text + "', '" + textBox3.Text + "', @adres_id)", con);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Admin kayit işlemi başarılı", "Kayıt Ekranı");
+                MessageBox.Show("Üye kayit işlemi başarılı", "Kayıt Ekranı");
 
             }
             catch
@@ -83,12 +83,33 @@ namespace kutuphaneYonetim
             textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             textBox3.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            textBox4.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
-            textBox5.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            textBox6.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-            textBox7.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-            textBox8.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-            textBox9.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+            textBox4.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            textBox5.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            textBox6.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            textBox7.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+            textBox8.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+            textBox9.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)  //Guncelle
+        {
+            try
+            {
+                con.Open();
+                cmd = new SqlCommand("UPDATE Adres SET il='" + textBox4.Text + "', ilce = '" + textBox5.Text + "', mahalle='" + textBox6.Text + "', sokak='" + textBox7.Text + "', bina= '" + int.Parse(textBox8.Text) + "', kapi='" + int.Parse(textBox9.Text) +"' WHERE adres_id = '"+ int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString())+"'; UPDATE Uye SET uye_ad='" + textBox1.Text + "', uye_soyad='" + textBox2.Text + "', uye_mail= '" + textBox3.Text + "' WHERE uye_id = '" + int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()) +"'      ", con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Üye güncelleme işlemi başarılı", "Güncelleme Ekranı");
+
+            }
+            catch
+            {
+                MessageBox.Show("Hatalı İşlem Yaptınız", "Hata Ekranı");
+            }
+            finally
+            {
+                Listele();
+                con.Close();
+            }
         }
     }
 }
