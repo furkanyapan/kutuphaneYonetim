@@ -281,6 +281,7 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(1410, 332);
             dataGridView1.TabIndex = 24;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // textBox10
             // 
@@ -348,7 +349,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Üye İşlemleri";
             Load += Form4_Load;
-            MouseClick += Form4_MouseClick;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
