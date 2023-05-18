@@ -233,6 +233,7 @@
             button1.TabIndex = 20;
             button1.Text = "Ekle";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -277,6 +278,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(1410, 332);
             dataGridView1.TabIndex = 24;
             // 
@@ -346,6 +348,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Üye İşlemleri";
             Load += Form4_Load;
+            MouseClick += Form4_MouseClick;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
