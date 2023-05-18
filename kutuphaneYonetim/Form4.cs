@@ -15,7 +15,6 @@ namespace kutuphaneYonetim
     {
         SqlConnection con = new SqlConnection(@"Data Source=MSI\SQLEXPRESS;Initial Catalog=kutuphane;Integrated Security=True");
         SqlCommand cmd;
-
         public void Temizle()
         {
             textBox1.Text = "";
