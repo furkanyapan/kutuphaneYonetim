@@ -11,5 +11,12 @@ namespace kutuphaneYonetim
         {
 
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form2 kayitOl = new Form2();
+            this.Hide();
+            kayitOl.Show();
+        }
     }
 }
