@@ -35,7 +35,7 @@ namespace kutuphaneYonetim
                 cmd = new SqlCommand("insert into Admin (uye_id, admin_gorev, admin_username, admin_password) values ('" + int.Parse(textBox1.Text) + "', '" + textBox2.Text + "', '" + textBox3.Text + "', '" + textBox4.Text + "')", con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Admin kayit işlemi başarılı", "Kayıt Ekranı");
-           
+
             } 
             catch 
             {

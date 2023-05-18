@@ -86,6 +86,7 @@
             textBox2.Location = new Point(330, 445);
             textBox2.Margin = new Padding(3, 2, 3, 2);
             textBox2.Name = "textBox2";
+            textBox2.PasswordChar = '*';
             textBox2.Size = new Size(226, 23);
             textBox2.TabIndex = 4;
             // 
@@ -99,6 +100,7 @@
             button1.TabIndex = 5;
             button1.Text = "Giriş Yap";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // linkLabel1
             // 
