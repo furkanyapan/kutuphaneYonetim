@@ -6,6 +6,7 @@ namespace kutuphaneYonetim
     {
         SqlConnection con = new SqlConnection(@"Data Source=MSI\SQLEXPRESS;Initial Catalog=kutuphane;Integrated Security=True");
         SqlCommand cmd;
+        public static string isim;
         public Form1()
         {
             InitializeComponent();
@@ -57,10 +58,10 @@ namespace kutuphaneYonetim
             {
                 MessageBox.Show("Hatalý iþlem ", "Hata ekraný ");
             }
-            finally 
-            { 
-                con.Close(); 
-            } 
+            finally
+            {
+                con.Close();
+            }
         }
     }
 }
