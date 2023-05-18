@@ -96,9 +96,30 @@ namespace kutuphaneYonetim
             try
             {
                 con.Open();
-                cmd = new SqlCommand("UPDATE Adres SET il='" + textBox4.Text + "', ilce = '" + textBox5.Text + "', mahalle='" + textBox6.Text + "', sokak='" + textBox7.Text + "', bina= '" + int.Parse(textBox8.Text) + "', kapi='" + int.Parse(textBox9.Text) +"' WHERE adres_id = '"+ int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString())+"'; UPDATE Uye SET uye_ad='" + textBox1.Text + "', uye_soyad='" + textBox2.Text + "', uye_mail= '" + textBox3.Text + "' WHERE uye_id = '" + int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()) +"'      ", con);
+                cmd = new SqlCommand("UPDATE Adres SET il='" + textBox4.Text + "', ilce = '" + textBox5.Text + "', mahalle='" + textBox6.Text + "', sokak='" + textBox7.Text + "', bina= '" + int.Parse(textBox8.Text) + "', kapi='" + int.Parse(textBox9.Text) + "' WHERE adres_id = '" + int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()) + "'; UPDATE Uye SET uye_ad='" + textBox1.Text + "', uye_soyad='" + textBox2.Text + "', uye_mail= '" + textBox3.Text + "' WHERE uye_id = '" + int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()) + "'      ", con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Üye güncelleme işlemi başarılı", "Güncelleme Ekranı");
+
+            }
+            catch
+            {
+                MessageBox.Show("Hatalı İşlem Yaptınız", "Hata Ekranı");
+            }
+            finally
+            {
+                Listele();
+                con.Close();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                cmd = new SqlCommand("DELETE FROM Uye WHERE uye_id = '" + int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()) + "';DELETE FROM Adres WHERE adres_id = '" + int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()) + "'      ", con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Üye silme işlemi başarılı", "Silme Ekranı");
 
             }
             catch
