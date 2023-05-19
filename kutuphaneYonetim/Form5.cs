@@ -55,5 +55,51 @@ namespace kutuphaneYonetim
         {
             Temizle();
         }
+
+        private void button1_Click(object sender, EventArgs e) // Ekle 
+        {
+            try
+            {
+                con.Open();
+                //cmd = new SqlCommand("INSERT INTO Yazar(yazar_ad, yazar_soyad) VALUES ('"+textBox5.Text+"', '"+textBox6.Text+"'); DECLARE @yazar_id int; SET @yazar_id = SCOPE_IDENTITY(); INSERT INTO Tur(tur_ad) VALUES ('"+textBox2.Text+"'); DECLARE @tur_id int; SET @tur_id = SCOPE_IDENTITY(); INSERT INTO Kitap(kitap_ad, kitap_basimyil, kitap_yayinci, tur_id, yazar_id) VALUES ('"+textBox1.Text +"', '"+textBox4.Text+"', '"+textBox3.Text+"', @tur_id, @yazar_id); DECLARE @kitap_id int; SET @kitap_id = SCOPE_IDENTITY(); INSERT INTO Konum(kitap_id, kat, dolap, raf) VALUES (@kitap_id, '"+int.Parse(textBox7.Text)+"', '"+int.Parse(textBox8.Text)+"', '"+int.Parse(textBox9.Text)+"');    ", con);
+                cmd = new SqlCommand("INSERT INTO Yazar(yazar_ad, yazar_soyad) VALUES (@yazar_ad, @yazar_soyad); DECLARE @yazar_id int; SET @yazar_id = SCOPE_IDENTITY(); INSERT INTO Tur(tur_ad) VALUES (@tur_ad); DECLARE @tur_id int; SET @tur_id = SCOPE_IDENTITY(); INSERT INTO Kitap(kitap_ad, kitap_basimyil, kitap_yayinci, tur_id, yazar_id) VALUES (@kitap_ad, @kitap_basimyil, @kitap_yayinci, @tur_id, @yazar_id); DECLARE @kitap_id int; SET @kitap_id = SCOPE_IDENTITY(); INSERT INTO Konum(kitap_id, kat, dolap, raf) VALUES (@kitap_id, @kat, @dolap, @raf);", con);
+
+                cmd.Parameters.AddWithValue("@yazar_ad", textBox5.Text);
+                cmd.Parameters.AddWithValue("@yazar_soyad", textBox6.Text);
+                cmd.Parameters.AddWithValue("@tur_ad", textBox2.Text);
+                cmd.Parameters.AddWithValue("@kitap_ad", textBox1.Text);
+                cmd.Parameters.AddWithValue("@kitap_basimyil", textBox4.Text);
+                cmd.Parameters.AddWithValue("@kitap_yayinci", textBox3.Text);
+                cmd.Parameters.AddWithValue("@kat", int.Parse(textBox7.Text));
+                cmd.Parameters.AddWithValue("@dolap", int.Parse(textBox8.Text));
+                cmd.Parameters.AddWithValue("@raf", int.Parse(textBox9.Text));
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Üye kayit işlemi başarılı", "Kayıt Ekranı");
+
+            }
+            catch
+            {
+                MessageBox.Show("Hatalı İşlem Yaptınız", "Hata Ekranı");
+            }
+            finally
+            {
+                Listele();
+                con.Close();
+            }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            textBox3.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            textBox4.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            textBox5.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            textBox6.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            textBox7.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            textBox8.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+            textBox9.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+        }
     }
 }

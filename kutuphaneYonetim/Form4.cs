@@ -55,17 +55,17 @@ namespace kutuphaneYonetim
             try
             {
                 con.Open();
-                //cmd = new SqlCommand("INSERT INTO Adres (il, ilce, mahalle, sokak, bina, kapi) values ('" + textBox4.Text + "', '" + textBox5.Text + "', '" + textBox6.Text + "', '" + textBox7.Text + "', '" + int.Parse(textBox8.Text) + "', '" + int.Parse(textBox9.Text) + "'); DECLARE @adres_id int; SET @adres_id = SCOPE_IDENTITY(); INSERT INTO Uye (uye_ad, uye_soyad, uye_mail, adres_id) VALUES ('" + textBox1.Text + "', '" + textBox2.Text + "', '" + textBox3.Text + "', @adres_id)", con);
-                SqlCommand cmd = new SqlCommand("INSERT INTO Adres (il, ilce, mahalle, sokak, bina, kapi) values (@il, @ilce, @mahalle, @sokak, @bina, @kapi); DECLARE @adres_id int; SET @adres_id = SCOPE_IDENTITY(); INSERT INTO Uye (uye_ad, uye_soyad, uye_mail, adres_id) VALUES (@uye_ad, @uye_soyad, @uye_mail, @adres_id)", con);
-                cmd.Parameters.AddWithValue("@il", textBox4.Text);
-                cmd.Parameters.AddWithValue("@ilce", textBox5.Text);
-                cmd.Parameters.AddWithValue("@mahalle", textBox6.Text);
-                cmd.Parameters.AddWithValue("@sokak", textBox7.Text);
-                cmd.Parameters.AddWithValue("@bina", int.Parse(textBox8.Text));
-                cmd.Parameters.AddWithValue("@kapi", int.Parse(textBox9.Text));
-                cmd.Parameters.AddWithValue("@uye_ad", textBox1.Text);
-                cmd.Parameters.AddWithValue("@uye_soyad", textBox2.Text);
-                cmd.Parameters.AddWithValue("@uye_mail", textBox3.Text);
+                cmd = new SqlCommand("INSERT INTO Adres (il, ilce, mahalle, sokak, bina, kapi) values ('" + textBox4.Text + "', '" + textBox5.Text + "', '" + textBox6.Text + "', '" + textBox7.Text + "', '" + int.Parse(textBox8.Text) + "', '" + int.Parse(textBox9.Text) + "'); DECLARE @adres_id int; SET @adres_id = SCOPE_IDENTITY(); INSERT INTO Uye (uye_ad, uye_soyad, uye_mail, adres_id) VALUES ('" + textBox1.Text + "', '" + textBox2.Text + "', '" + textBox3.Text + "', @adres_id)", con);
+                /*SqlCommand cmd = new SqlCommand("INSERT INTO Adres (il, ilce, mahalle, sokak, bina, kapi) values (@il, @ilce, @mahalle, @sokak, @bina, @kapi); DECLARE @adres_id int; SET @adres_id = SCOPE_IDENTITY(); INSERT INTO Uye (uye_ad, uye_soyad, uye_mail, adres_id) VALUES (@uye_ad, @uye_soyad, @uye_mail, @adres_id)", con);
+                 cmd.Parameters.AddWithValue("@il", textBox4.Text);
+                 cmd.Parameters.AddWithValue("@ilce", textBox5.Text);
+                 cmd.Parameters.AddWithValue("@mahalle", textBox6.Text);
+                 cmd.Parameters.AddWithValue("@sokak", textBox7.Text);
+                 cmd.Parameters.AddWithValue("@bina", int.Parse(textBox8.Text));
+                 cmd.Parameters.AddWithValue("@kapi", int.Parse(textBox9.Text));
+                 cmd.Parameters.AddWithValue("@uye_ad", textBox1.Text);
+                 cmd.Parameters.AddWithValue("@uye_soyad", textBox2.Text);
+                 cmd.Parameters.AddWithValue("@uye_mail", textBox3.Text);*/
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Üye kayit işlemi başarılı", "Kayıt Ekranı");

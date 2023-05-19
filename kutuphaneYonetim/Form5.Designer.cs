@@ -133,6 +133,7 @@
             button1.TabIndex = 49;
             button1.Text = "Ekle";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // textBox9
             // 
@@ -315,6 +316,7 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.Size = new Size(1319, 332);
             dataGridView1.TabIndex = 53;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // label12
             // 
