@@ -29,7 +29,7 @@ namespace kutuphaneYonetim
         }
         public void Listele()
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT k.kitap_id AS Barkod, k.kitap_ad AS [Kitap Adı], t.tur_ad AS Tür, y.yazar_ad AS [Yazar Adı], y.yazar_soyad AS [Yazar Soyad], k.kitap_basimyil AS [Basım Yılı], k.kitap_yayinci AS Yayınevi, kn.kat AS Kat, kn.dolap AS Dolap, kn.raf AS Raf\r\nFROM Konum kn\r\nJOIN Kitap k ON kn.kitap_id = k.kitap_id\r\nJOIN Yazar y ON k.yazar_id = y.yazar_id\r\nJOIN Tur t ON t.tur_id = k.tur_id\r\nORDER BY k.kitap_id;", con);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT k.kitap_id AS Barkod, k.kitap_ad AS [Kitap Adı], t.tur_ad AS Tür, y.yazar_ad AS [Yazar Adı], y.yazar_soyad AS [Yazar Soyad], k.kitap_basimyil AS [Basım Yılı], k.kitap_yayinci AS Yayınevi, kn.kat AS Kat, kn.dolap AS Dolap, kn.raf AS Raf, y.yazar_id, t.tur_id\r\nFROM Konum kn\r\nJOIN Kitap k ON kn.kitap_id = k.kitap_id\r\nJOIN Yazar y ON k.yazar_id = y.yazar_id\r\nJOIN Tur t ON t.tur_id = k.tur_id\r\nORDER BY k.kitap_id;", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
@@ -100,6 +100,27 @@ namespace kutuphaneYonetim
             textBox7.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
             textBox8.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
             textBox9.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
+        }
+
+        private void button2_Click(object sender, EventArgs e)  //Guncelle
+        {
+            try
+            {
+                con.Open();
+                cmd = new SqlCommand("UPDATE Kitap SET kitap_ad='" + textBox1.Text + "', kitap_yayinci='" + textBox3.Text + "', kitap_basimyil='" + textBox4.Text + "' WHERE kitap_id='" + int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()) + "'; UPDATE Tur SET tur_ad='" + textBox2.Text + "' WHERE tur_id='" + int.Parse(dataGridView1.CurrentRow.Cells[11].Value.ToString()) + "'; UPDATE Yazar SET yazar_ad='" + textBox5.Text + "', yazar_soyad='" + textBox6.Text + "' WHERE yazar_id='" + int.Parse(dataGridView1.CurrentRow.Cells[10].Value.ToString()) + "'; UPDATE Konum SET kat='" + int.Parse(textBox7.Text) + "', dolap='" + int.Parse(textBox8.Text) + "', raf='" + int.Parse(textBox9.Text) + "' WHERE kitap_id='" + int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()) + "'", con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Üye güncelleme işlemi başarılı", "Güncelleme Ekranı");
+
+            }
+            catch
+            {
+                MessageBox.Show("Hatalı İşlem Yaptınız", "Hata Ekranı");
+            }
+            finally
+            {
+                Listele();
+                con.Close();
+            }
         }
     }
 }
