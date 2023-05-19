@@ -133,11 +133,11 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Aqua;
-            label1.Font = new Font("Showcard Gothic", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Showcard Gothic", 20F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.DarkViolet;
-            label1.Location = new Point(519, 94);
+            label1.Location = new Point(453, 104);
             label1.Name = "label1";
-            label1.Size = new Size(381, 31);
+            label1.Size = new Size(525, 43);
             label1.TabIndex = 8;
             label1.Text = "KÜTÜPHANE YÖNETIM SISTEMI";
             // 

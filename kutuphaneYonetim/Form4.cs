@@ -15,6 +15,7 @@ namespace kutuphaneYonetim
     {
         SqlConnection con = new SqlConnection(@"Data Source=MSI\SQLEXPRESS;Initial Catalog=kutuphane;Integrated Security=True");
         SqlCommand cmd;
+
         public void Temizle()
         {
             textBox1.Text = "";
@@ -136,7 +137,7 @@ namespace kutuphaneYonetim
                 con.Close();
             }
         }
-
+        
         private void textBox10_TextChanged(object sender, EventArgs e)  // Arama
         {
             SqlDataAdapter da = new SqlDataAdapter("SELECT u.uye_id AS [Üye No], u.uye_ad AS Ad, u.uye_soyad AS Soyad, u.uye_mail AS Mail, a.il AS İl, a.ilce AS İlçe, a.mahalle AS Mahalle, a.sokak AS Sokak, a.bina AS Bina, a.kapi AS Kapi FROM Uye U JOIN Adres A ON U.adres_id = A.adres_id WHERE U.uye_ad LIKE '" + textBox10.Text + "%';    ", con);
@@ -145,7 +146,7 @@ namespace kutuphaneYonetim
             dataGridView1.DataSource = dt;
             Temizle();
         }
-
+        
         private void pictureBox1_Click(object sender, EventArgs e) // Geri Git, Ana Menuye don
         {
             Form3 anaMenu = new Form3();

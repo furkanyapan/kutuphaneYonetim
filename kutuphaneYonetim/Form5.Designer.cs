@@ -79,11 +79,11 @@
             // 
             label10.AutoSize = true;
             label10.BackColor = Color.Aqua;
-            label10.Font = new Font("Showcard Gothic", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Font = new Font("Showcard Gothic", 20F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = Color.DarkViolet;
-            label10.Location = new Point(600, 12);
+            label10.Location = new Point(572, 12);
             label10.Name = "label10";
-            label10.Size = new Size(217, 31);
+            label10.Size = new Size(300, 43);
             label10.TabIndex = 30;
             label10.Text = "KITAP ISLEMLERI";
             // 

@@ -17,7 +17,7 @@ namespace kutuphaneYonetim
             InitializeComponent();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e) // Geri git, ana menu
         {
             Form3 anaMenu = new Form3();
             this.Hide();

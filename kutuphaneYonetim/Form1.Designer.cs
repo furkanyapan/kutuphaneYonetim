@@ -91,13 +91,15 @@
             // 
             // button1
             // 
-            button1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.BackColor = Color.DarkViolet;
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
             button1.Location = new Point(802, 643);
             button1.Name = "button1";
             button1.Size = new Size(114, 45);
             button1.TabIndex = 5;
             button1.Text = "Giriş Yap";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // linkLabel1

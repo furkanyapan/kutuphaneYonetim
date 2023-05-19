@@ -257,11 +257,11 @@
             // 
             label10.AutoSize = true;
             label10.BackColor = Color.Aqua;
-            label10.Font = new Font("Showcard Gothic", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Font = new Font("Showcard Gothic", 20F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = Color.DarkViolet;
-            label10.Location = new Point(675, 12);
+            label10.Location = new Point(641, 12);
             label10.Name = "label10";
-            label10.Size = new Size(193, 31);
+            label10.Size = new Size(264, 43);
             label10.TabIndex = 23;
             label10.Text = "ÜYE ISLEMLERI";
             // 
@@ -292,9 +292,9 @@
             label11.ForeColor = Color.DarkViolet;
             label11.Location = new Point(178, 419);
             label11.Name = "label11";
-            label11.Size = new Size(104, 20);
+            label11.Size = new Size(110, 20);
             label11.TabIndex = 26;
-            label11.Text = "Ada Göre Ara";
+            label11.Text = "İsme Göre Ara";
             // 
             // button4
             // 
