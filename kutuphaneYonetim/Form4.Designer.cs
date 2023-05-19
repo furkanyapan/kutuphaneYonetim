@@ -259,7 +259,7 @@
             label10.BackColor = Color.Aqua;
             label10.Font = new Font("Showcard Gothic", 15F, FontStyle.Regular, GraphicsUnit.Point);
             label10.ForeColor = Color.DarkViolet;
-            label10.Location = new Point(681, 34);
+            label10.Location = new Point(675, 12);
             label10.Name = "label10";
             label10.Size = new Size(193, 31);
             label10.TabIndex = 23;
@@ -311,7 +311,7 @@
             // 
             pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(37, 34);
+            pictureBox1.Location = new Point(12, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(116, 78);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
