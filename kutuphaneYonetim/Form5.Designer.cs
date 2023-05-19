@@ -307,6 +307,7 @@
             textBox10.Name = "textBox10";
             textBox10.Size = new Size(156, 27);
             textBox10.TabIndex = 54;
+            textBox10.TextChanged += textBox10_TextChanged;
             // 
             // dataGridView1
             // 
@@ -347,6 +348,7 @@
             textBox11.Name = "textBox11";
             textBox11.Size = new Size(156, 27);
             textBox11.TabIndex = 57;
+            textBox11.TextChanged += textBox11_TextChanged;
             // 
             // Form5
             // 
