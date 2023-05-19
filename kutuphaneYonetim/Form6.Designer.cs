@@ -40,8 +40,6 @@
             label3 = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
             button1 = new Button();
             button2 = new Button();
             label4 = new Label();
@@ -56,6 +54,8 @@
             textBox10 = new TextBox();
             label14 = new Label();
             textBox6 = new TextBox();
+            dateTimePicker1 = new DateTimePicker();
+            dateTimePicker2 = new DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -163,36 +163,22 @@
             // 
             textBox1.Location = new Point(186, 171);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(181, 27);
+            textBox1.Size = new Size(137, 27);
             textBox1.TabIndex = 64;
             // 
             // textBox2
             // 
             textBox2.Location = new Point(186, 231);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(181, 27);
+            textBox2.Size = new Size(137, 27);
             textBox2.TabIndex = 65;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(186, 284);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(181, 27);
-            textBox3.TabIndex = 66;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(186, 344);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(181, 27);
-            textBox4.TabIndex = 67;
             // 
             // button1
             // 
             button1.BackColor = Color.DarkViolet;
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(242, 391);
+            button1.Location = new Point(264, 385);
             button1.Name = "button1";
             button1.Size = new Size(125, 50);
             button1.TabIndex = 68;
@@ -204,7 +190,7 @@
             button2.BackColor = Color.DarkViolet;
             button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(242, 556);
+            button2.Location = new Point(264, 552);
             button2.Name = "button2";
             button2.Size = new Size(125, 50);
             button2.TabIndex = 69;
@@ -245,7 +231,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(73, 347);
+            label7.Location = new Point(73, 345);
             label7.Name = "label7";
             label7.Size = new Size(82, 20);
             label7.TabIndex = 73;
@@ -265,7 +251,7 @@
             // 
             textBox5.Location = new Point(186, 509);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(181, 27);
+            textBox5.Size = new Size(137, 27);
             textBox5.TabIndex = 74;
             // 
             // label9
@@ -295,11 +281,11 @@
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label13.ForeColor = Color.DarkViolet;
-            label13.Location = new Point(622, 388);
+            label13.Location = new Point(572, 388);
             label13.Name = "label13";
-            label13.Size = new Size(70, 20);
+            label13.Size = new Size(120, 20);
             label13.TabIndex = 79;
-            label13.Text = "Üye İsmi";
+            label13.Text = "Üye İsmi İle Ara";
             // 
             // textBox10
             // 
@@ -313,11 +299,11 @@
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label14.ForeColor = Color.DarkViolet;
-            label14.Location = new Point(1173, 388);
+            label14.Location = new Point(1123, 388);
             label14.Name = "label14";
-            label14.Size = new Size(80, 20);
+            label14.Size = new Size(130, 20);
             label14.TabIndex = 81;
-            label14.Text = "Kitap İsmi";
+            label14.Text = "Kitap İsmi İle Ara";
             // 
             // textBox6
             // 
@@ -326,12 +312,28 @@
             textBox6.Size = new Size(156, 27);
             textBox6.TabIndex = 80;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(186, 282);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(137, 27);
+            dateTimePicker1.TabIndex = 82;
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Location = new Point(186, 340);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(137, 27);
+            dateTimePicker2.TabIndex = 83;
+            // 
             // Form6
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Aqua;
             ClientSize = new Size(1482, 853);
+            Controls.Add(dateTimePicker2);
+            Controls.Add(dateTimePicker1);
             Controls.Add(label14);
             Controls.Add(textBox6);
             Controls.Add(label13);
@@ -346,8 +348,6 @@
             Controls.Add(label4);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(label3);
@@ -382,8 +382,6 @@
         private Label label3;
         private TextBox textBox1;
         private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
         private Button button1;
         private Button button2;
         private Label label4;
@@ -398,5 +396,7 @@
         private TextBox textBox10;
         private Label label14;
         private TextBox textBox6;
+        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dateTimePicker2;
     }
 }
