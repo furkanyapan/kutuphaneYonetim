@@ -29,7 +29,7 @@ namespace kutuphaneYonetim
         }
         public void Listele()
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT u.uye_id, u.uye_ad, u.uye_soyad, u.uye_mail, a.adres_id, a.il, a.ilce, a.mahalle, a.sokak, a.bina, a.kapi\r\nFROM Uye u\r\nJOIN Adres a ON u.adres_id = a.adres_id", con);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT u.uye_id AS [Üye No], u.uye_ad AS Ad, u.uye_soyad AS Soyad, u.uye_mail AS Mail, a.il AS İl, a.ilce AS İlçe, a.mahalle AS Mahalle, a.sokak AS Sokak, a.bina AS Bina, a.kapi AS Kapi FROM Uye u JOIN Adres a ON u.adres_id = a.adres_id", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
@@ -87,12 +87,12 @@ namespace kutuphaneYonetim
             textBox1.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             textBox2.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
             textBox3.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
-            textBox4.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
-            textBox5.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
-            textBox6.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
-            textBox7.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
-            textBox8.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
-            textBox9.Text = dataGridView1.CurrentRow.Cells[10].Value.ToString();
+            textBox4.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
+            textBox5.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            textBox6.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            textBox7.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            textBox8.Text = dataGridView1.CurrentRow.Cells[8].Value.ToString();
+            textBox9.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)  //Guncelle
@@ -139,7 +139,7 @@ namespace kutuphaneYonetim
 
         private void textBox10_TextChanged(object sender, EventArgs e)  // Arama
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT u.uye_id, u.uye_ad, u.uye_soyad, u.uye_mail, a.adres_id, a.il, a.ilce, a.mahalle, a.sokak, a.bina, a.kapi FROM Uye U JOIN Adres A ON U.adres_id = A.adres_id WHERE U.uye_ad LIKE '" + textBox10.Text + "%';    ", con);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT u.uye_id AS [Üye No], u.uye_ad AS Ad, u.uye_soyad AS Soyad, u.uye_mail AS Mail, a.il AS İl, a.ilce AS İlçe, a.mahalle AS Mahalle, a.sokak AS Sokak, a.bina AS Bina, a.kapi AS Kapi FROM Uye U JOIN Adres A ON U.adres_id = A.adres_id WHERE U.uye_ad LIKE '" + textBox10.Text + "%';    ", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
