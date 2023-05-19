@@ -75,7 +75,7 @@ namespace kutuphaneYonetim
                 cmd.Parameters.AddWithValue("@raf", int.Parse(textBox9.Text));
 
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Üye kayit işlemi başarılı", "Kayıt Ekranı");
+                MessageBox.Show("Kitap kayit işlemi başarılı", "Kayıt Ekranı");
 
             }
             catch
@@ -109,12 +109,33 @@ namespace kutuphaneYonetim
                 con.Open();
                 cmd = new SqlCommand("UPDATE Kitap SET kitap_ad='" + textBox1.Text + "', kitap_yayinci='" + textBox3.Text + "', kitap_basimyil='" + textBox4.Text + "' WHERE kitap_id='" + int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()) + "'; UPDATE Tur SET tur_ad='" + textBox2.Text + "' WHERE tur_id='" + int.Parse(dataGridView1.CurrentRow.Cells[11].Value.ToString()) + "'; UPDATE Yazar SET yazar_ad='" + textBox5.Text + "', yazar_soyad='" + textBox6.Text + "' WHERE yazar_id='" + int.Parse(dataGridView1.CurrentRow.Cells[10].Value.ToString()) + "'; UPDATE Konum SET kat='" + int.Parse(textBox7.Text) + "', dolap='" + int.Parse(textBox8.Text) + "', raf='" + int.Parse(textBox9.Text) + "' WHERE kitap_id='" + int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()) + "'", con);
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Üye güncelleme işlemi başarılı", "Güncelleme Ekranı");
+                MessageBox.Show("Kitap güncelleme işlemi başarılı", "Güncelleme Ekranı");
 
             }
             catch
             {
                 MessageBox.Show("Hatalı İşlem Yaptınız", "Hata Ekranı");
+            }
+            finally
+            {
+                Listele();
+                con.Close();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e) // sil
+        {
+            try
+            {
+                con.Open();
+                cmd = new SqlCommand("DELETE FROM Konum WHERE kitap_id = '" + int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()) + "'; DELETE FROM Kitap WHERE kitap_id = '" + int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()) + "' ", con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Kitap silme işlemi başarılı", "Silme Ekranı");
+
+            }
+            catch
+            {
+                //MessageBox.Show("Hatalı İşlem Yaptınız", "Hata Ekranı");
             }
             finally
             {

@@ -109,6 +109,7 @@
             button3.TabIndex = 51;
             button3.Text = "Sil";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
