@@ -30,7 +30,7 @@ namespace kutuphaneYonetim
         }
         public void Listele()
         {
-            SqlDataAdapter da = new SqlDataAdapter("SELECT u.uye_id AS [Üye No], u.uye_ad AS Ad, u.uye_soyad AS Soyad, u.uye_mail AS Mail, a.il AS İl, a.ilce AS İlçe, a.mahalle AS Mahalle, a.sokak AS Sokak, a.bina AS Bina, a.kapi AS Kapi FROM Uye u JOIN Adres a ON u.adres_id = a.adres_id", con);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT u.uye_id AS [Üye No], u.uye_ad AS Ad, u.uye_soyad AS Soyad, u.uye_mail AS Mail, a.il AS İl, a.ilce AS İlçe, a.mahalle AS Mahalle, a.sokak AS Sokak, a.bina AS Bina, a.kapi AS Kapi FROM Uye u JOIN Adres a ON u.adres_id = a.adres_id ORDER BY u.uye_id", con);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
@@ -137,7 +137,7 @@ namespace kutuphaneYonetim
                 con.Close();
             }
         }
-        
+
         private void textBox10_TextChanged(object sender, EventArgs e)  // Arama
         {
             SqlDataAdapter da = new SqlDataAdapter("SELECT u.uye_id AS [Üye No], u.uye_ad AS Ad, u.uye_soyad AS Soyad, u.uye_mail AS Mail, a.il AS İl, a.ilce AS İlçe, a.mahalle AS Mahalle, a.sokak AS Sokak, a.bina AS Bina, a.kapi AS Kapi FROM Uye U JOIN Adres A ON U.adres_id = A.adres_id WHERE U.uye_ad LIKE '" + textBox10.Text + "%';    ", con);
@@ -146,12 +146,13 @@ namespace kutuphaneYonetim
             dataGridView1.DataSource = dt;
             Temizle();
         }
-        
+
         private void pictureBox1_Click(object sender, EventArgs e) // Geri Git, Ana Menuye don
         {
             Form3 anaMenu = new Form3();
             this.Hide();
             anaMenu.Show();
         }
+
     }
 }

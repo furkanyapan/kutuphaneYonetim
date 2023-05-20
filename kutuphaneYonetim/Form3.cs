@@ -40,9 +40,9 @@ namespace kutuphaneYonetim
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Form7 baziIslem = new Form7();
+            Form7 adminIslem = new Form7();
             this.Hide();
-            baziIslem.Show();
+            adminIslem.Show();
         }
     }
 }

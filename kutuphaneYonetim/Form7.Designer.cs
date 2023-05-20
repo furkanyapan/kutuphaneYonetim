@@ -28,36 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            linkLabel1 = new LinkLabel();
-            SuspendLayout();
-            // 
-            // linkLabel1
-            // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(12, 824);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(123, 20);
-            linkLabel1.TabIndex = 3;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Ana Menüye Dön";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
-            // 
-            // Form7
-            // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Aqua;
-            ClientSize = new Size(882, 853);
-            Controls.Add(linkLabel1);
-            Name = "Form7";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Bazı İlginç Veriler";
-            ResumeLayout(false);
-            PerformLayout();
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "Form7";
         }
 
         #endregion
-
-        private LinkLabel linkLabel1;
     }
 }

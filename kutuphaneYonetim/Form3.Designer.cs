@@ -32,23 +32,20 @@
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
-            button4 = new Button();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
             label1 = new Label();
             label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
             button1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(435, 235);
+            button1.Location = new Point(669, 260);
             button1.Name = "button1";
             button1.Size = new Size(250, 150);
             button1.TabIndex = 0;
@@ -59,7 +56,7 @@
             // button2
             // 
             button2.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(897, 235);
+            button2.Location = new Point(454, 472);
             button2.Name = "button2";
             button2.Size = new Size(250, 150);
             button2.TabIndex = 1;
@@ -70,7 +67,7 @@
             // button3
             // 
             button3.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.Location = new Point(435, 506);
+            button3.Location = new Point(915, 472);
             button3.Name = "button3";
             button3.Size = new Size(250, 150);
             button3.TabIndex = 2;
@@ -78,21 +75,10 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
-            // button4
-            // 
-            button4.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.Location = new Point(897, 506);
-            button4.Name = "button4";
-            button4.Size = new Size(250, 150);
-            button4.TabIndex = 3;
-            button4.Text = "Bazı İlginç Veriler";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
-            // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(289, 235);
+            pictureBox1.Location = new Point(523, 260);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(150, 150);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -102,7 +88,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(750, 235);
+            pictureBox2.Location = new Point(307, 472);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(150, 150);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -112,22 +98,12 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(289, 506);
+            pictureBox3.Location = new Point(769, 472);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(150, 150);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 6;
             pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(750, 506);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(150, 150);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 7;
-            pictureBox4.TabStop = false;
             // 
             // label1
             // 
@@ -159,11 +135,9 @@
             ClientSize = new Size(1482, 853);
             Controls.Add(label7);
             Controls.Add(label1);
-            Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
-            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -173,7 +147,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -183,11 +156,9 @@
         private Button button1;
         private Button button2;
         private Button button3;
-        private Button button4;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
         private Label label1;
         private Label label7;
     }

@@ -16,12 +16,5 @@ namespace kutuphaneYonetim
         {
             InitializeComponent();
         }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Form3 anaMenu = new Form3();
-            this.Hide();
-            anaMenu.Show();
-        }
     }
 }

@@ -279,7 +279,7 @@
             // 
             // textBox10
             // 
-            textBox10.Location = new Point(288, 416);
+            textBox10.Location = new Point(145, 416);
             textBox10.Name = "textBox10";
             textBox10.Size = new Size(156, 27);
             textBox10.TabIndex = 25;
@@ -290,7 +290,7 @@
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label11.ForeColor = Color.DarkViolet;
-            label11.Location = new Point(178, 419);
+            label11.Location = new Point(35, 419);
             label11.Name = "label11";
             label11.Size = new Size(110, 20);
             label11.TabIndex = 26;
