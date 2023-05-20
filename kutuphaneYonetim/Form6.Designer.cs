@@ -47,20 +47,21 @@
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
-            textBox5 = new TextBox();
+            textBox3 = new TextBox();
             label9 = new Label();
             label11 = new Label();
             label13 = new Label();
-            textBox10 = new TextBox();
+            textBox4 = new TextBox();
             label14 = new Label();
-            textBox6 = new TextBox();
+            textBox5 = new TextBox();
             dateTimePicker1 = new DateTimePicker();
             dateTimePicker2 = new DateTimePicker();
             button3 = new Button();
             button4 = new Button();
             button5 = new Button();
             label15 = new Label();
-            textBox3 = new TextBox();
+            textBox6 = new TextBox();
+            button6 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -104,39 +105,45 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(453, 161);
+            dataGridView1.Location = new Point(375, 134);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(401, 218);
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(515, 218);
             dataGridView1.TabIndex = 58;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(872, 161);
+            dataGridView2.Location = new Point(937, 134);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
             dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(543, 218);
+            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView2.Size = new Size(515, 218);
             dataGridView2.TabIndex = 59;
+            dataGridView2.CellClick += dataGridView2_CellClick;
             // 
             // dataGridView3
             // 
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(453, 464);
+            dataGridView3.Location = new Point(375, 437);
             dataGridView3.Name = "dataGridView3";
             dataGridView3.RowHeadersWidth = 51;
             dataGridView3.RowTemplate.Height = 29;
-            dataGridView3.Size = new Size(962, 308);
+            dataGridView3.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView3.Size = new Size(1077, 308);
             dataGridView3.TabIndex = 60;
+            dataGridView3.CellClick += dataGridView3_CellClick;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.DarkViolet;
-            label1.Location = new Point(453, 130);
+            label1.Location = new Point(375, 103);
             label1.Name = "label1";
             label1.Size = new Size(126, 28);
             label1.TabIndex = 61;
@@ -147,7 +154,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.DarkViolet;
-            label2.Location = new Point(872, 130);
+            label2.Location = new Point(937, 103);
             label2.Name = "label2";
             label2.Size = new Size(140, 28);
             label2.TabIndex = 62;
@@ -158,7 +165,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.DarkViolet;
-            label3.Location = new Point(453, 433);
+            label3.Location = new Point(375, 406);
             label3.Name = "label3";
             label3.Size = new Size(161, 28);
             label3.TabIndex = 63;
@@ -166,14 +173,14 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(186, 171);
+            textBox1.Location = new Point(151, 223);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(137, 27);
             textBox1.TabIndex = 64;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(186, 231);
+            textBox2.Location = new Point(151, 283);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(137, 27);
             textBox2.TabIndex = 65;
@@ -183,30 +190,32 @@
             button1.BackColor = Color.DarkViolet;
             button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(264, 385);
+            button1.Location = new Point(229, 437);
             button1.Name = "button1";
             button1.Size = new Size(125, 50);
             button1.TabIndex = 68;
             button1.Text = "Ödünç Ver";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
             button2.BackColor = Color.DarkViolet;
             button2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(264, 552);
+            button2.Location = new Point(229, 604);
             button2.Name = "button2";
             button2.Size = new Size(125, 50);
             button2.TabIndex = 69;
             button2.Text = "Geri Al";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(73, 174);
+            label4.Location = new Point(38, 226);
             label4.Name = "label4";
             label4.Size = new Size(61, 20);
             label4.TabIndex = 70;
@@ -216,7 +225,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(73, 234);
+            label5.Location = new Point(38, 286);
             label5.Name = "label5";
             label5.Size = new Size(71, 20);
             label5.TabIndex = 71;
@@ -226,7 +235,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(73, 287);
+            label6.Location = new Point(38, 339);
             label6.Name = "label6";
             label6.Size = new Size(97, 20);
             label6.TabIndex = 72;
@@ -236,7 +245,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(73, 345);
+            label7.Location = new Point(38, 397);
             label7.Name = "label7";
             label7.Size = new Size(82, 20);
             label7.TabIndex = 73;
@@ -246,25 +255,25 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(73, 512);
+            label8.Location = new Point(38, 564);
             label8.Name = "label8";
             label8.Size = new Size(87, 20);
             label8.TabIndex = 75;
             label8.Text = "Emanet No";
             // 
-            // textBox5
+            // textBox3
             // 
-            textBox5.Location = new Point(186, 509);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(137, 27);
-            textBox5.TabIndex = 74;
+            textBox3.Location = new Point(151, 561);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(137, 27);
+            textBox3.TabIndex = 74;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = Color.DarkViolet;
-            label9.Location = new Point(73, 130);
+            label9.Location = new Point(38, 182);
             label9.Name = "label9";
             label9.Size = new Size(205, 28);
             label9.TabIndex = 76;
@@ -275,7 +284,7 @@
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label11.ForeColor = Color.DarkViolet;
-            label11.Location = new Point(73, 474);
+            label11.Location = new Point(38, 526);
             label11.Name = "label11";
             label11.Size = new Size(194, 28);
             label11.TabIndex = 77;
@@ -286,47 +295,47 @@
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label13.ForeColor = Color.DarkViolet;
-            label13.Location = new Point(572, 388);
+            label13.Location = new Point(608, 357);
             label13.Name = "label13";
             label13.Size = new Size(120, 20);
             label13.TabIndex = 79;
             label13.Text = "Üye İsmi İle Ara";
             // 
-            // textBox10
+            // textBox4
             // 
-            textBox10.Location = new Point(698, 385);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(156, 27);
-            textBox10.TabIndex = 78;
+            textBox4.Location = new Point(734, 354);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(156, 27);
+            textBox4.TabIndex = 78;
             // 
             // label14
             // 
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label14.ForeColor = Color.DarkViolet;
-            label14.Location = new Point(1123, 388);
+            label14.Location = new Point(1160, 357);
             label14.Name = "label14";
             label14.Size = new Size(130, 20);
             label14.TabIndex = 81;
             label14.Text = "Kitap İsmi İle Ara";
             // 
-            // textBox6
+            // textBox5
             // 
-            textBox6.Location = new Point(1259, 385);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(156, 27);
-            textBox6.TabIndex = 80;
+            textBox5.Location = new Point(1296, 354);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(156, 27);
+            textBox5.TabIndex = 80;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(186, 282);
+            dateTimePicker1.Location = new Point(151, 334);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(137, 27);
             dateTimePicker1.TabIndex = 82;
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(186, 340);
+            dateTimePicker2.Location = new Point(151, 392);
             dateTimePicker2.Name = "dateTimePicker2";
             dateTimePicker2.Size = new Size(137, 27);
             dateTimePicker2.TabIndex = 83;
@@ -336,7 +345,7 @@
             button3.BackColor = Color.DarkViolet;
             button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(872, 436);
+            button3.Location = new Point(909, 409);
             button3.Name = "button3";
             button3.Size = new Size(177, 28);
             button3.TabIndex = 84;
@@ -348,7 +357,7 @@
             button4.BackColor = Color.DarkViolet;
             button4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button4.ForeColor = Color.White;
-            button4.Location = new Point(1055, 436);
+            button4.Location = new Point(1092, 409);
             button4.Name = "button4";
             button4.Size = new Size(177, 28);
             button4.TabIndex = 85;
@@ -360,7 +369,7 @@
             button5.BackColor = Color.DarkViolet;
             button5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             button5.ForeColor = Color.White;
-            button5.Location = new Point(1238, 436);
+            button5.Location = new Point(1275, 409);
             button5.Name = "button5";
             button5.Size = new Size(177, 28);
             button5.TabIndex = 86;
@@ -372,18 +381,29 @@
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             label15.ForeColor = Color.DarkViolet;
-            label15.Location = new Point(1133, 781);
+            label15.Location = new Point(1170, 754);
             label15.Name = "label15";
             label15.Size = new Size(120, 20);
             label15.TabIndex = 88;
             label15.Text = "Üye İsmi İle Ara";
             // 
-            // textBox3
+            // textBox6
             // 
-            textBox3.Location = new Point(1259, 778);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(156, 27);
-            textBox3.TabIndex = 87;
+            textBox6.Location = new Point(1296, 751);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(156, 27);
+            textBox6.TabIndex = 87;
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.FromArgb(224, 224, 224);
+            button6.Location = new Point(1391, 61);
+            button6.Name = "button6";
+            button6.Size = new Size(79, 29);
+            button6.TabIndex = 89;
+            button6.Text = "Temizle";
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // Form6
             // 
@@ -391,21 +411,22 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Aqua;
             ClientSize = new Size(1482, 853);
+            Controls.Add(button6);
             Controls.Add(label15);
-            Controls.Add(textBox3);
+            Controls.Add(textBox6);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(dateTimePicker2);
             Controls.Add(dateTimePicker1);
             Controls.Add(label14);
-            Controls.Add(textBox6);
+            Controls.Add(textBox5);
             Controls.Add(label13);
-            Controls.Add(textBox10);
+            Controls.Add(textBox4);
             Controls.Add(label11);
             Controls.Add(label9);
             Controls.Add(label8);
-            Controls.Add(textBox5);
+            Controls.Add(textBox3);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -454,19 +475,20 @@
         private Label label6;
         private Label label7;
         private Label label8;
-        private TextBox textBox5;
+        private TextBox textBox3;
         private Label label9;
         private Label label11;
         private Label label13;
-        private TextBox textBox10;
+        private TextBox textBox4;
         private Label label14;
-        private TextBox textBox6;
+        private TextBox textBox5;
         private DateTimePicker dateTimePicker1;
         private DateTimePicker dateTimePicker2;
         private Button button3;
         private Button button4;
         private Button button5;
         private Label label15;
-        private TextBox textBox3;
+        private TextBox textBox6;
+        private Button button6;
     }
 }
