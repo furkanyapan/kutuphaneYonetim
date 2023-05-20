@@ -56,6 +56,11 @@
             textBox6 = new TextBox();
             dateTimePicker1 = new DateTimePicker();
             dateTimePicker2 = new DateTimePicker();
+            button3 = new Button();
+            button4 = new Button();
+            button5 = new Button();
+            label15 = new Label();
+            textBox3 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
@@ -326,12 +331,71 @@
             dateTimePicker2.Size = new Size(137, 27);
             dateTimePicker2.TabIndex = 83;
             // 
+            // button3
+            // 
+            button3.BackColor = Color.DarkViolet;
+            button3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(872, 436);
+            button3.Name = "button3";
+            button3.Size = new Size(177, 28);
+            button3.TabIndex = 84;
+            button3.Text = "İade Tarihi Azalan Sıra";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.DarkViolet;
+            button4.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button4.ForeColor = Color.White;
+            button4.Location = new Point(1055, 436);
+            button4.Name = "button4";
+            button4.Size = new Size(177, 28);
+            button4.TabIndex = 85;
+            button4.Text = "İade Tarihi Artan Sıra";
+            button4.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.DarkViolet;
+            button5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button5.ForeColor = Color.White;
+            button5.Location = new Point(1238, 436);
+            button5.Name = "button5";
+            button5.Size = new Size(177, 28);
+            button5.TabIndex = 86;
+            button5.Text = "İade Etmeyenler";
+            button5.UseVisualStyleBackColor = false;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label15.ForeColor = Color.DarkViolet;
+            label15.Location = new Point(1133, 781);
+            label15.Name = "label15";
+            label15.Size = new Size(120, 20);
+            label15.TabIndex = 88;
+            label15.Text = "Üye İsmi İle Ara";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(1259, 778);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(156, 27);
+            textBox3.TabIndex = 87;
+            // 
             // Form6
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Aqua;
             ClientSize = new Size(1482, 853);
+            Controls.Add(label15);
+            Controls.Add(textBox3);
+            Controls.Add(button5);
+            Controls.Add(button4);
+            Controls.Add(button3);
             Controls.Add(dateTimePicker2);
             Controls.Add(dateTimePicker1);
             Controls.Add(label14);
@@ -398,5 +462,10 @@
         private TextBox textBox6;
         private DateTimePicker dateTimePicker1;
         private DateTimePicker dateTimePicker2;
+        private Button button3;
+        private Button button4;
+        private Button button5;
+        private Label label15;
+        private TextBox textBox3;
     }
 }
