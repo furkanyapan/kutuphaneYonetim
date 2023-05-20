@@ -426,6 +426,7 @@
             Name = "Form6";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Emanet İşlemleri";
+            Load += Form6_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
