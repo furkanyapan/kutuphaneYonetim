@@ -307,6 +307,7 @@
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(156, 27);
             textBox4.TabIndex = 78;
+            textBox4.TextChanged += textBox4_TextChanged;
             // 
             // label14
             // 
@@ -325,6 +326,7 @@
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(156, 27);
             textBox5.TabIndex = 80;
+            textBox5.TextChanged += textBox5_TextChanged;
             // 
             // dateTimePicker1
             // 
@@ -351,6 +353,7 @@
             button3.TabIndex = 84;
             button3.Text = "İade Tarihi Azalan Sıra";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -363,6 +366,7 @@
             button4.TabIndex = 85;
             button4.Text = "İade Tarihi Artan Sıra";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button5
             // 
@@ -375,6 +379,7 @@
             button5.TabIndex = 86;
             button5.Text = "İade Etmeyenler";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // label15
             // 
@@ -393,6 +398,7 @@
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(156, 27);
             textBox6.TabIndex = 87;
+            textBox6.TextChanged += textBox6_TextChanged;
             // 
             // button6
             // 

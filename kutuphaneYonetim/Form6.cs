@@ -22,9 +22,6 @@ namespace kutuphaneYonetim
             textBox1.Text = "";
             textBox2.Text = "";
             textBox3.Text = "";
-            textBox4.Text = "";
-            textBox5.Text = "";
-            textBox6.Text = "";
             dateTimePicker1.Text = DateTime.Now.ToString("yyyy-MM-dd");
             dateTimePicker2.Text = DateTime.Now.ToString("yyyy-MM-dd");
         }
@@ -141,6 +138,60 @@ namespace kutuphaneYonetim
         private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e) //emenet cell click
         {
             textBox3.Text = dataGridView3.CurrentRow.Cells[0].Value.ToString();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e) // Uye uye ismi ile arama
+        {
+            SqlDataAdapter da = new SqlDataAdapter(" SELECT u.uye_id AS [Üye No], u.uye_ad AS Ad, u.uye_soyad AS Soyad, u.uye_mail AS Mail, a.il AS İl, a.ilce AS İlçe, a.mahalle AS Mahalle, a.sokak AS Sokak, a.bina AS Bina, a.kapi AS Kapi \r\nFROM Uye u JOIN Adres a \r\nON u.adres_id = a.adres_id\r\nWHERE u.uye_ad LIKE '" + textBox4.Text + "%' ", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+            Temizle();
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e) // Kitap ad ile ara
+        {
+            SqlDataAdapter da = new SqlDataAdapter(" SELECT k.kitap_id AS Barkod, k.kitap_ad AS [Kitap Adı], t.tur_ad AS Tür, y.yazar_ad AS [Yazar Adı], y.yazar_soyad AS [Yazar Soyad], k.kitap_basimyil AS [Basım Yılı], k.kitap_yayinci AS Yayınevi, kn.kat AS Kat, kn.dolap AS Dolap, kn.raf AS Raf\r\nFROM Konum kn\r\nJOIN Kitap k ON kn.kitap_id = k.kitap_id\r\nJOIN Yazar y ON k.yazar_id = y.yazar_id\r\nJOIN Tur t ON t.tur_id = k.tur_id\r\nWHERE k.kitap_ad LIKE '" + textBox5.Text + "%' ", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView2.DataSource = dt;
+            Temizle();
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e) // Emanaet uye ad ile arama
+        {
+            SqlDataAdapter da = new SqlDataAdapter("SELECT o.odunc_id AS [Emanet No], u.uye_ad AS [Üye Ad], u.uye_soyad AS [Üye Soyad], u.uye_mail AS [Üye Mail], k.kitap_ad AS [Kitap], o.odunc_baslangic AS [Teslim Tarihi], o.odunc_bitis AS [İade Tarihi], CASE WHEN o.odunc_kontrol = 1 THEN 'Evet' ELSE 'Hayır' END AS [İade Edildi]\r\nFROM Uye u\r\nJOIN Odunc o ON u.uye_id = o.uye_id\r\nJOIN Kitap k ON o.kitap_id = k.kitap_id\r\nWHERE u.uye_ad LIKE '" + textBox6.Text + "%' ", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView3.DataSource = dt;
+            Temizle();
+        }
+
+        private void button3_Click(object sender, EventArgs e) //iade tarihi azalan sira
+        {
+            SqlDataAdapter da = new SqlDataAdapter(" SELECT o.odunc_id AS [Emanet No], u.uye_ad AS [Üye Ad], u.uye_soyad AS [Üye Soyad], u.uye_mail AS [Üye Mail], k.kitap_ad AS [Kitap], o.odunc_baslangic AS [Teslim Tarihi], o.odunc_bitis AS [İade Tarihi], CASE WHEN o.odunc_kontrol = 1 THEN 'Evet' ELSE 'Hayır' END AS [İade Edildi]\r\nFROM Uye u\r\nJOIN Odunc o ON u.uye_id = o.uye_id\r\nJOIN Kitap k ON o.kitap_id = k.kitap_id\r\nORDER BY o.odunc_bitis DESC; ", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView3.DataSource = dt;
+            Temizle();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SqlDataAdapter da = new SqlDataAdapter(" SELECT o.odunc_id AS [Emanet No], u.uye_ad AS [Üye Ad], u.uye_soyad AS [Üye Soyad], u.uye_mail AS [Üye Mail], k.kitap_ad AS [Kitap], o.odunc_baslangic AS [Teslim Tarihi], o.odunc_bitis AS [İade Tarihi], CASE WHEN o.odunc_kontrol = 1 THEN 'Evet' ELSE 'Hayır' END AS [İade Edildi]\r\nFROM Uye u\r\nJOIN Odunc o ON u.uye_id = o.uye_id\r\nJOIN Kitap k ON o.kitap_id = k.kitap_id\r\nORDER BY o.odunc_bitis; ", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView3.DataSource = dt;
+            Temizle();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            SqlDataAdapter da = new SqlDataAdapter(" SELECT o.odunc_id AS [Emanet No], u.uye_ad AS [Üye Ad], u.uye_soyad AS [Üye Soyad], u.uye_mail AS [Üye Mail], k.kitap_ad AS [Kitap], o.odunc_baslangic AS [Teslim Tarihi], o.odunc_bitis AS [İade Tarihi], CASE WHEN o.odunc_kontrol = 1 THEN 'Evet' ELSE 'Hayır' END AS [İade Edildi]\r\nFROM Uye u\r\nJOIN Odunc o ON u.uye_id = o.uye_id\r\nJOIN Kitap k ON o.kitap_id = k.kitap_id\r\nWHERE o.odunc_kontrol=0\r\nORDER BY o.odunc_id ASC;", con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            dataGridView3.DataSource = dt;
+            Temizle();
         }
     }
 }
