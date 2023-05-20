@@ -38,7 +38,7 @@ namespace kutuphaneYonetim
             emanetIslem.Show();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click_1(object sender, EventArgs e)
         {
             Form7 adminIslem = new Form7();
             this.Hide();

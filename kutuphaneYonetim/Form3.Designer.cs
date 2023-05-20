@@ -37,15 +37,18 @@
             pictureBox3 = new PictureBox();
             label1 = new Label();
             label7 = new Label();
+            button4 = new Button();
+            pictureBox4 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
             button1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(669, 260);
+            button1.Location = new Point(454, 259);
             button1.Name = "button1";
             button1.Size = new Size(250, 150);
             button1.TabIndex = 0;
@@ -56,7 +59,7 @@
             // button2
             // 
             button2.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.Location = new Point(454, 472);
+            button2.Location = new Point(915, 259);
             button2.Name = "button2";
             button2.Size = new Size(250, 150);
             button2.TabIndex = 1;
@@ -78,7 +81,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(523, 260);
+            pictureBox1.Location = new Point(308, 259);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(150, 150);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -88,7 +91,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(307, 472);
+            pictureBox2.Location = new Point(768, 259);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(150, 150);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -127,12 +130,35 @@
             label7.TabIndex = 19;
             label7.Text = "Written by Furkan YAPAN";
             // 
+            // button4
+            // 
+            button4.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            button4.Location = new Point(453, 472);
+            button4.Name = "button4";
+            button4.Size = new Size(250, 150);
+            button4.TabIndex = 20;
+            button4.Text = "Ek Tablolar";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click_1;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(308, 472);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(150, 150);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 21;
+            pictureBox4.TabStop = false;
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Aqua;
             ClientSize = new Size(1482, 853);
+            Controls.Add(pictureBox4);
+            Controls.Add(button4);
             Controls.Add(label7);
             Controls.Add(label1);
             Controls.Add(pictureBox3);
@@ -147,6 +173,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -161,5 +188,7 @@
         private PictureBox pictureBox3;
         private Label label1;
         private Label label7;
+        private Button button4;
+        private PictureBox pictureBox4;
     }
 }
